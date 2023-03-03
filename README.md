@@ -49,7 +49,7 @@ A complete phpunit.xml example could look like this:
          colors="true"
          convertDeprecationsToExceptions="false"
          stopOnFailure="true"
-         printerClass="Ixnode\PhpPhpunitPrinter\Printer"
+         printerClass="Ixnode\PhpPhpunitPrinter\TestDoxPrinter"
 >
     <php>
         <ini name="display_errors" value="1"/>
