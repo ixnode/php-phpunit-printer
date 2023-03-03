@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Releases
 
+### [0.1.2] - 2023-03-04
+
+* Set more distance to time output
+
 ### [0.1.1] - 2023-03-03
 
 * Add TestDoxPrinter class
