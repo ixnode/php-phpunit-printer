@@ -33,14 +33,15 @@ final class DivisionTest extends TestCase
      * @dataProvider dataProviderDivision
      *
      * @test
-     * @testdox $number) Test Division of two given values
+     * @testdox $number) Test Division - $message
      * @param int $number
+     * @param string $message
      * @param int|float $value1
      * @param int|float $value2
      * @param class-string<TypeInvalidException>|int|float $expected
      * @throws Exception
      */
-    public function division(int $number, int|float $value1, int|float $value2, string|int|float $expected): void
+    public function division(int $number, string $message, int|float $value1, int|float $value2, string|int|float $expected): void
     {
         /* Arrange */
         if (is_string($expected)) {
@@ -52,6 +53,7 @@ final class DivisionTest extends TestCase
 
         /* Assert */
         $this->assertIsNumeric($number); // To avoid phpmd warning.
+        $this->assertIsString($message); // To avoid phpmd warning.
         $this->assertEquals($expected, $sum);
     }
 
@@ -65,12 +67,11 @@ final class DivisionTest extends TestCase
         $number = 0;
 
         return [
-            [++$number, 0, 0, DivisionByZeroError::class, ],
-            [++$number, 1, 1, 1, ],
-            [++$number, 2, 1, 2, ],
-            [++$number, 4, 1, 4, ],
-            [++$number, 1, 1, 1, ],
-            [++$number, 1, 1, 1, ],
+            [++$number, 'Division by 0', 0, 0, DivisionByZeroError::class, ],
+            [++$number, 'Division 1 by 1', 1, 1, 1, ],
+            [++$number, 'Division 2 by 1', 2, 1, 2, ],
+            [++$number, 'Division 4 by 1', 4, 1, 4, ],
+            [++$number, 'Division 8 by 2', 8, 2, 4, ],
         ];
     }
 }
