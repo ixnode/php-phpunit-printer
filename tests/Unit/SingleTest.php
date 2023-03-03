@@ -28,6 +28,7 @@ final class SingleTest extends TestCase
     /**
      * Test wrapper.
      *
+     * @testdox Single Test
      * @test
      * @throws Exception
      */

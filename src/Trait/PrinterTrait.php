@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestResult;
  */
 trait PrinterTrait
 {
-    private string $templateOutputDetail = '    (%%%dd/%%%dd) %%s %%-50s (%%.3fs)';
+    private string $templateOutputDetail = '    (%%%dd/%%%dd) %%s %%-120s (%%.3fs)';
 
     private string $templateOverview = "  \033[01;36m%s\033[0m";
 
