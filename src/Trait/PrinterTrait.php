@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestResult;
  */
 trait PrinterTrait
 {
-    private string $templateOutputDetail = '    [%%%dd/%%%dd] (%%.3fs) %%s %%s';
+    private string $templateOutputDetail = '    %%s [%%%dd/%%%dd] (%%.3fs) => %%s';
 
     private string $templateOverview = "  \033[01;36m%s\033[0m";
 
@@ -122,10 +122,10 @@ trait PrinterTrait
 
         echo sprintf(
             sprintf($this->templateOutputDetail, $length, $length).PHP_EOL,
+            $this->testStatus,
             $this->testCurrent,
             $this->testTotal,
             $time,
-            $this->testStatus,
             $testName
         );
     }
